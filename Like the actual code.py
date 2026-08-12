@@ -89,11 +89,11 @@ else:
       print("-100 telemarketing points")
       telemarketing =+ -100
 Checkpointmaker(telemarketingpoints)
-if telemarketingpoints > 100
-:
+if telemarketingpoints > 100:
   print("you can continue")
 else:
-  raise exception ("You got rejected. Try again")
+  print("Tab 14 ENDING")
+  print("you have failed and have been sent to the google doc: https://docs.google.com/document/d/1QUeC6_UcQXmG1JxoDBRfEsDzFy47bcwvLeZozBydWkE/ in Tab 14 eternally")
 print("Welcome to the open world of telemarketingland")
 
 
