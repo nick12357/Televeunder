@@ -2,14 +2,35 @@ from logging import exception
 import time
 telemarketingpoints=0
 savenum=0
-def Checkpointmaker(telemarketingpoints):
-    if telemarketingpoints > 0:
-       print("You don't have enough telemarketer points for a save")
+extracheckpoints=0
+food=0
+doihavemoney=0
+def check_invalid_funds(telemarketingpoints):
+  if telemarketingpoints <= 0:
+    doihavemoney=False
+    print("You may not have enough telemarketing points")
+  else:
+    doihavemoney = True
+def lojadecaboverde(telemarketingpoints):
+   print("welcome to the shop")
+   print("You have", telemarketingpoints)
+   item=input("You can buy: 1. Extra Checkpoint(You have an extra checkpoint where you are) (150 telemarketing points) \n 2. Food (10 telemarketing points) (Restores Health). Select an item here")
+   check_invalid_funds(telemarketingpoints)
+   if doihavemoney == True:
+      if item == 1:
+         extracheckpoints=+1
+      elif item == 2:
+         food=+1
+      else:
+         print("invalid choice")
+         lojadecaboverde(telemarketingpoints)
+         
 
-    else:
-        telemarketingpoints =+ -100
-        savenum =+ 1
+   else:
+      pass
 
+
+      
 
 print("===========================================================================")
 print("      Telemarketer Pylon Procrastination Corner Quest Thingy (TPPCQT) ")
@@ -88,7 +109,6 @@ if inputvar == "C":
 else:
       print("-100 telemarketing points")
       telemarketing =+ -100
-Checkpointmaker(telemarketingpoints)
 if telemarketingpoints > 100:
   print("you can continue")
 else:
