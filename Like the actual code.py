@@ -1,5 +1,6 @@
 import logging
 import time
+import os
 
 telemarketingpoints=0
 food=0
@@ -79,9 +80,16 @@ print("      Telemarketer Pylon Procrastination Corner Quest Thingy (TPPCQT) ")
 print("===========================================================================")
 print(">>>>>>>>>>>>>>>>V.1 or something>>>>>>>>>>>>>>>>>>>")
 time.sleep(2.5)
-boblebuilder=input("Press enter to continue or save to go to your last checkpoint. \n if you want to reset type reset")
-if boblebuilder  != "" or "save":
-  logging.exception("just press enter or like save ik i could of made it continue but this is funner")
+boblebuilder=input("Press enter to continue or save to go to your last checkpoint. \n if you want to reset type reset: ")
+
+if boblebuilder == "reset":
+   confirm=input("are you sure; this will delete your save file and replace it. Press any key to continue (other than N that means no)")
+   if confirm != "N":
+    if os.path.exists("save.log"):
+       os.remove("save.log")
+       print("yay your save is deleted")
+    else:
+       raise Warning ("The file could not be deleted. Please try again. \n If the issue still persists, send us an angry report on the issues tab here: https://github.com/nick12357/Televeunder")
 
 if boblebuilder == "":
   stage="opening scene"
