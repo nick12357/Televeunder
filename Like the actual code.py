@@ -7,20 +7,22 @@ food=0
 doihavemoney=0
 truetelemarketer=0
 stage=""
+sick=0
+hp=100
 logging.basicConfig(
     filename="save.log", 
     filemode="a", 
     level=logging.DEBUG
 )
 
-def log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage):
+def log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage,sick,hp):
        logging.info("readme: telemarketingpoints",telemarketingpoints)
        logging.info("readme: food",food)
        logging.info("readme: do i have money",doihavemoney)
        logging.info("readme: truetelemarketer", truetelemarketer)
        logging.info("readme: stage", stage)
-   
-
+       logging.info("readme: sick", sick)
+       logging.info("readme: hp", hp)
    
 def check_invalid_funds(telemarketingpoints):
   if telemarketingpoints <= 0:
@@ -55,7 +57,8 @@ def openworld():
     print("But you resist...")
    if movement == "C":
     if truetelemarketer == 1:
-         #work on this later
+         print("you enter your house to go to your computer")
+         #this is where the other endings like ldl and you make a game endings happen
       if truetelemarketer == 0:
         print("You have not became a true telemarketer at the big pylon intersection of the cave")
    if movement == "D":
@@ -65,8 +68,25 @@ def openworld():
               raise Exception ("thats the game")
      if truetelemarketer == 0: 
         print("You have not became a true telemarketer at the big pylon intersection of the cave")
-    #i will procrastinate on E and F for now
-            
+   if movement == "E":
+      if sick == 1:
+         sick = 0
+         print("You were healed!")
+      else:
+         print("you werent sick")
+   if movement == "F":
+    print("To be continued...")
+    time.sleep(2.5)
+    print("Tranferring to the new cave... (or define function)")
+    cave()
+      
+
+      
+def cave():
+   print("Welcome to the cave")
+   print("Your true challange begins here")
+   print("where your health matters")
+   print("if at any point you need to see your stats type info during the inputs")
   
          
 
