@@ -59,7 +59,7 @@ def openworld():
     if truetelemarketer == 1:
          print("you enter your house to go to your computer")
          #this is where the other endings like ldl and you make a game endings happen
-      if truetelemarketer == 0:
+    if truetelemarketer == 0:
         print("You have not became a true telemarketer at the big pylon intersection of the cave")
    if movement == "D":
      if truetelemarketer == 1:
@@ -192,5 +192,3 @@ else:
 print("Welcome to the open world of telemarketingland")
 stage = "the main world"
 openworld()
-
-
