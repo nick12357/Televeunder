@@ -19,8 +19,10 @@ def lojadecaboverde(telemarketingpoints):
    if doihavemoney == True:
       if item == 1:
          extracheckpoints=+1
+         telemarketingpoints =+-150
       elif item == 2:
          food=+1
+         telemarketingpoints =+-10
       else:
          print("invalid choice")
          lojadecaboverde(telemarketingpoints)
