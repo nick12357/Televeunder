@@ -5,6 +5,7 @@ savenum=0
 extracheckpoints=0
 food=0
 doihavemoney=0
+truetelemarketer=0
 def check_invalid_funds(telemarketingpoints):
   if telemarketingpoints <= 0:
     doihavemoney=False
@@ -26,10 +27,30 @@ def lojadecaboverde(telemarketingpoints):
       else:
          print("invalid choice")
          lojadecaboverde(telemarketingpoints)
+def openworld(movement):
+   movement=input("where do you want to go? A) loja de cabo verde. B) Home. C) Telemarketer Company. D) Airport E) Hospatial F) Cave")
+   if movement == "A":
+    lojadecaboverde(telemarketingpoints)
+   if movement == "B":
+    print("You feel an urge to go back")
+    print("But you resist...")
+   if movement == "C":
+    if truetelemarketer == 1:
+         #work on this later
+      if truetelemarketer == 0:
+        print("You have not became a true telemarketer at the big pylon intersection of the cave")
+   if movement == "D":
+     if truetelemarketer == 1:
+              print("The Smort Person ENDING")
+              print("You fly back to planet pylon and live a normal life. ")
+     if truetelemarketer == 0: 
+        print("You have not became a true telemarketer at the big pylon intersection of the cave")
+    #i will procrastinate on E and F for now
+            
+  
          
 
-   else:
-      pass
+
 
 
       
@@ -117,6 +138,7 @@ else:
   print("Tab 14 ENDING")
   print("you have failed and have been sent to the google doc: https://docs.google.com/document/d/1QUeC6_UcQXmG1JxoDBRfEsDzFy47bcwvLeZozBydWkE/ in Tab 14 eternally")
 print("Welcome to the open world of telemarketingland")
+openworld()
 
 
 
