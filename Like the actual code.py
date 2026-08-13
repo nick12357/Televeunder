@@ -1,33 +1,50 @@
-from logging import exception
+import logging
 import time
+
 telemarketingpoints=0
 savenum=0
-extracheckpoints=0
 food=0
 doihavemoney=0
 truetelemarketer=0
+stage=""
+logging.basicConfig(
+    filename="app.log", 
+    filemode="a", 
+    level=logging.DEBUG
+)
+
+def log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage):
+       logging.info(telemarketingpoints)
+       logging.info(savenum)
+       logging.info(food)
+       logging.info(doihavemoney)
+       logging.info(truetelemarketer)
+       logging.info(stage)
+   
+
+   
 def check_invalid_funds(telemarketingpoints):
   if telemarketingpoints <= 0:
     doihavemoney=False
     print("You may not have enough telemarketing points")
+
   else:
     doihavemoney = True
 def lojadecaboverde(telemarketingpoints):
+   stage="loja de cabo verde"
    print("welcome to the shop")
    print("You have", telemarketingpoints)
-   item=input("You can buy: 1. Extra Checkpoint(You have an extra checkpoint where you are) (150 telemarketing points) \n 2. Food (10 telemarketing points) (Restores Health). Select an item here")
+   item=input("You can buy: 1. Food (10 telemarketing points) (Restores Health). Select an item here")
    check_invalid_funds(telemarketingpoints)
    if doihavemoney == True:
       if item == 1:
-         extracheckpoints=+1
-         telemarketingpoints =+-150
-      elif item == 2:
          food=+1
          telemarketingpoints =+-10
       else:
          print("invalid choice")
          lojadecaboverde(telemarketingpoints)
 def openworld(movement):
+   stage="openworld"
    movement=input("where do you want to go? A) loja de cabo verde. B) Home. C) Telemarketer Company. D) Airport E) Hospatial F) Cave")
    if movement == "A":
     lojadecaboverde(telemarketingpoints)
@@ -60,11 +77,12 @@ print("      Telemarketer Pylon Procrastination Corner Quest Thingy (TPPCQT) ")
 print("===========================================================================")
 print(">>>>>>>>>>>>>>>>V.1 or something>>>>>>>>>>>>>>>>>>>")
 time.sleep(2.5)
-boblebuilder=input("Press enter to continue or save to go to your last checkpoint")
+boblebuilder=input("Press enter to continue or save to go to your last checkpoint. \n if you want to reset type reset")
 if boblebuilder  != "" or "save":
   exception("just press enter or like save ik i could of made it continue but this is funner")
 
 if boblebuilder == "":
+  stage="opening scene"
   time.sleep(2.5)
   print("...")
   time.sleep(2.5)
@@ -100,6 +118,7 @@ if boblebuilder == "":
     print("It’s time. ")
     print("You look at the questions and begin")
     print("Question 1: Who is the best telemarketer? (CASE SENITIVE CAPITALS ONLY): ")
+    stage="quiz"
     hi=input("A.Neekan (was number 2 at the time until winter of 25/26) \n B.Bob (the builder) (just bob) \n C.Dirpy (wasn't on the leaderboard at the time) \n D.Tung man 41 (wasn't a meme at the time) \n")
     if hi == "B":
       print("your correct 100 telemarketing points")
@@ -138,6 +157,7 @@ else:
   print("Tab 14 ENDING")
   print("you have failed and have been sent to the google doc: https://docs.google.com/document/d/1QUeC6_UcQXmG1JxoDBRfEsDzFy47bcwvLeZozBydWkE/ in Tab 14 eternally")
 print("Welcome to the open world of telemarketingland")
+stage = "the main world"
 openworld()
 
 
