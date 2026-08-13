@@ -79,7 +79,7 @@ print(">>>>>>>>>>>>>>>>V.1 or something>>>>>>>>>>>>>>>>>>>")
 time.sleep(2.5)
 boblebuilder=input("Press enter to continue or save to go to your last checkpoint. \n if you want to reset type reset")
 if boblebuilder  != "" or "save":
-  exception("just press enter or like save ik i could of made it continue but this is funner")
+  logging.exception("just press enter or like save ik i could of made it continue but this is funner")
 
 if boblebuilder == "":
   stage="opening scene"
