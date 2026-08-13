@@ -2,7 +2,6 @@ import logging
 import time
 
 telemarketingpoints=0
-savenum=0
 food=0
 doihavemoney=0
 truetelemarketer=0
@@ -13,13 +12,12 @@ logging.basicConfig(
     level=logging.DEBUG
 )
 
-def log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage):
-       logging.info(telemarketingpoints)
-       logging.info(savenum)
-       logging.info(food)
-       logging.info(doihavemoney)
-       logging.info(truetelemarketer)
-       logging.info(stage)
+def log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage):
+       logging.info("readme: telemarketingpoints",telemarketingpoints)
+       logging.info("readme: food",food)
+       logging.info("readme: do i have money",doihavemoney)
+       logging.info("readme: truetelemarketer", truetelemarketer)
+       logging.info("readme: stage", stage)
    
 
    
@@ -30,9 +28,9 @@ def check_invalid_funds(telemarketingpoints):
 
   else:
     doihavemoney = True
-def lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarketer,stage):
+def lojadecaboverde(telemarketingpoints,food,doihavemoney,truetelemarketer,stage):
    stage="loja de cabo verde"
-   log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
+   log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage)
    
    print("welcome to the shop")
    print("You have", telemarketingpoints)
@@ -44,13 +42,13 @@ def lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarket
          telemarketingpoints +=-10
       else:
          print("invalid choice")
-         lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarketer,stage)
+         lojadecaboverde(telemarketingpoints,food,doihavemoney,truetelemarketer,stage)
 def openworld():
    stage="openworld"
-   log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
+   log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage)
    movement=input("where do you want to go? A) loja de cabo verde. B) Home. C) Telemarketer Company. D) Airport E) Hospatial F) Cave")
    if movement == "A":
-    lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarketer,stage)
+    lojadecaboverde(telemarketingpoints,food,doihavemoney,truetelemarketer,stage)
    if movement == "B":
     print("You feel an urge to go back")
     print("But you resist...")
@@ -87,7 +85,7 @@ if boblebuilder  != "" or "save":
 
 if boblebuilder == "":
   stage="opening scene"
-  log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
+  log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage)
   time.sleep(2.5)
   print("...")
   time.sleep(2.5)
@@ -124,7 +122,7 @@ if boblebuilder == "":
     print("You look at the questions and begin")
     print("Question 1: Who is the best telemarketer? (CASE SENITIVE CAPITALS ONLY): ")
     stage="quiz"
-    log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
+    log(telemarketingpoints,food,doihavemoney,truetelemarketer,stage)
     hi=input("A.Neekan (was number 2 at the time until winter of 25/26) \n B.Bob (the builder) (just bob) \n C.Dirpy (wasn't on the leaderboard at the time) \n D.Tung man 41 (wasn't a meme at the time) \n")
     if hi == "B":
       print("your correct 100 telemarketing points")
