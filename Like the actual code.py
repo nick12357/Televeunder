@@ -8,7 +8,7 @@ doihavemoney=0
 truetelemarketer=0
 stage=""
 logging.basicConfig(
-    filename="app.log", 
+    filename="save.log", 
     filemode="a", 
     level=logging.DEBUG
 )
@@ -30,24 +30,27 @@ def check_invalid_funds(telemarketingpoints):
 
   else:
     doihavemoney = True
-def lojadecaboverde(telemarketingpoints):
+def lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarketer,stage):
    stage="loja de cabo verde"
+   log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
+   
    print("welcome to the shop")
    print("You have", telemarketingpoints)
    item=input("You can buy: 1. Food (10 telemarketing points) (Restores Health). Select an item here")
    check_invalid_funds(telemarketingpoints)
    if doihavemoney == True:
       if item == 1:
-         food=+1
-         telemarketingpoints =+-10
+         food+=1
+         telemarketingpoints +=-10
       else:
          print("invalid choice")
-         lojadecaboverde(telemarketingpoints)
-def openworld(movement):
+         lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarketer,stage)
+def openworld():
    stage="openworld"
+   log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
    movement=input("where do you want to go? A) loja de cabo verde. B) Home. C) Telemarketer Company. D) Airport E) Hospatial F) Cave")
    if movement == "A":
-    lojadecaboverde(telemarketingpoints)
+    lojadecaboverde(telemarketingpoints,food,savenum,doihavemoney,truetelemarketer,stage)
    if movement == "B":
     print("You feel an urge to go back")
     print("But you resist...")
@@ -60,6 +63,7 @@ def openworld(movement):
      if truetelemarketer == 1:
               print("The Smort Person ENDING")
               print("You fly back to planet pylon and live a normal life. ")
+              raise Exception ("thats the game")
      if truetelemarketer == 0: 
         print("You have not became a true telemarketer at the big pylon intersection of the cave")
     #i will procrastinate on E and F for now
@@ -83,6 +87,7 @@ if boblebuilder  != "" or "save":
 
 if boblebuilder == "":
   stage="opening scene"
+  log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
   time.sleep(2.5)
   print("...")
   time.sleep(2.5)
@@ -119,46 +124,47 @@ if boblebuilder == "":
     print("You look at the questions and begin")
     print("Question 1: Who is the best telemarketer? (CASE SENITIVE CAPITALS ONLY): ")
     stage="quiz"
+    log(telemarketingpoints,savenum,food,doihavemoney,truetelemarketer,stage)
     hi=input("A.Neekan (was number 2 at the time until winter of 25/26) \n B.Bob (the builder) (just bob) \n C.Dirpy (wasn't on the leaderboard at the time) \n D.Tung man 41 (wasn't a meme at the time) \n")
     if hi == "B":
       print("your correct 100 telemarketing points")
-      telemarketingpoints =+ 100
+      telemarketingpoints += 100
     else:
       print("-100 telemarketing points")
-      telemarketing =+ -100
+      telemarketingpoints += -100
             ###############################################################################################################
     print("NEXT QUESTION")
     ilovegdcologne=input("Question 2: what is the best gym class item? \n A.Pool Noodle \n B.Hoola Hoop \n C.Pylon  \n D.John Chungus \n")
     if ilovegdcologne == "C":
       print("your correct 100 telemarketing points")
-      telemarketingpoints =+ 100
+      telemarketingpoints += 100
     else:
       print("-100 telemarketing points")
-      telemarketing =+ -100
+      telemarketingpoints += -100
             ###############################################################################################################
     inputvar=input("Question 3: What do you throw at Samar? \n A) Yogurt \n B) Samar popo uncle \n C) Clothes \n D) Apples \n")
     if inputvar == "A":
       print("your correct 100 telemarketing points")
-      telemarketingpoints =+ 100
+      telemarketingpoints += 100
     else:
       print("-100 telemarketing points")
-      telemarketing =+ -100
+      telemarketingpoints += -100
       ###############################################################################################################
 inputvar=input("Question 4: what is the Telemarketing OS? \n A) UwUntu \n B) Arch \n C) Mint \n D) Windows \n")
 if inputvar == "C":
       print("your correct 100 telemarketing points")
-      telemarketingpoints =+ 100
+      telemarketingpoints += 100
 else:
       print("-100 telemarketing points")
-      telemarketing =+ -100
+      telemarketingpoints += -100
 if telemarketingpoints > 100:
   print("you can continue")
 else:
   print("Tab 14 ENDING")
   print("you have failed and have been sent to the google doc: https://docs.google.com/document/d/1QUeC6_UcQXmG1JxoDBRfEsDzFy47bcwvLeZozBydWkE/ in Tab 14 eternally")
+  raise Exception ("thats the game")
 print("Welcome to the open world of telemarketingland")
 stage = "the main world"
 openworld()
-
 
 
