@@ -192,3 +192,4 @@ else:
 print("Welcome to the open world of telemarketingland")
 stage = "the main world"
 openworld()
+#testformergeconflicts
